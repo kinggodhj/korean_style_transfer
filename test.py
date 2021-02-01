@@ -39,7 +39,6 @@ parser.add_argument('--beam_size', type=int, default=10)
 #  Model parameters
 ######################################################################################
 parser.add_argument('--word_dict_max_num', type=int, default=5, help='')
-parser.add_argument('--epoch', type=int, default=200)
 parser.add_argument('--max_sequence_length', type=int, default=60)
 parser.add_argument('--num_layers_AE', type=int, default=2)
 parser.add_argument('--transformer_model_size', type=int, default=256)
@@ -51,12 +50,9 @@ parser.add_argument('--embedding_dropout', type=float, default=0.5)
 parser.add_argument('--learning_rate', type=float, default=0.001)
 parser.add_argument('--label_size', type=int, default=1)
 
-parser.add_argument('--iter', type=str, default=108,)
 parser.add_argument('--gpu', type=int, default=1)
 parser.add_argument('--weight', type=float, default=1.5)
-parser.add_argument('--mode', type=str, default='add')
 
-parser.add_argument('--if_load_from_checkpoint', type=bool)
 args = parser.parse_args()
 
 device=torch.device(f"cuda:{args.gpu}" if torch.cuda.is_available() else "cpu")
@@ -77,7 +73,7 @@ def text2piece(sentence, sm):
     tmp=sm.EncodeAsIds(sentence)
     return [tmp]
 
-def generation(ae_model, sm, test_sentence, label, epoch, args):
+def generation(ae_model, sm, test_sentence, label, args):
     for it in range(len(test_sentence)):
         ####################
         #####load data######
@@ -101,7 +97,6 @@ def generation(ae_model, sm, test_sentence, label, epoch, args):
         #batch, dim = 1,256
         w=args.weight
         out_1=ae_model.beam_decode(latent+sign*w*(trans_emb+own_emb), args.beam_size, args.max_sequence_length, args.id_bos)
-        add_output(piece2text(out_1[1].tolist(), sm), './generation/{}/test.txt'.format(args.name, epoch, args.beam_size, args.weight))
         
         print("-------------------------------")
         print('original:', sm.DecodeIds(tensor_tgt_y.tolist()[0]))
@@ -121,20 +116,17 @@ if __name__ == '__main__':
                                    latent_size=args.latent_size,
                                    gpu=args.gpu, 
                                    d_ff=args.transformer_ff_size), args.gpu)
-
-    iters=args.iter.split(',')
-
-    for idx, i in enumerate(iters):
-        ae_model.load_state_dict(torch.load(args.current_save_path + '/{}_ae_model_params.pkl'.format(i), map_location=device))
-        sm=spm.SentencePieceProcessor()
-        sm.Load(args.sm_path+'%s.model'%args.name)
-        print('Type the style of original sentence')
-        print('Negative:0 Positive:1')
-        label=int(input())
-        print('Type the sentence wanted to transferred')
-        input_sentence=str(input())
-        test_sentence=text2piece(input_sentence, sm)
-        generation(ae_model, sm, test_sentence, label, i, args)
+    
+    ae_model.load_state_dict(torch.load('./model.pkl', map_location=device))
+    sm=spm.SentencePieceProcessor()
+    sm.Load(args.sm_path+'%s.model'%args.name)
+    print('Type the style of original sentence')
+    print('Negative:0 Positive:1')
+    label=int(input())
+    print('Type the sentence wanted to transferred')
+    input_sentence=str(input())
+    test_sentence=text2piece(input_sentence, sm)
+    generation(ae_model, sm, test_sentence, label, args)
 
     print("Done!")
 
