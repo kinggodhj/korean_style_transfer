@@ -37,3 +37,7 @@ python data_token.py
 >>>sp.EncodeAsIds(input)
 >>>[79, 189, 1188, 4]
 ```
+
+------------
+
+### 학습하기
