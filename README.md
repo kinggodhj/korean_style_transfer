@@ -1,8 +1,6 @@
 # 한국어 문장 스타일 변환 (긍정 <-> 부정)
-Sentence style transfer in Korean
 
 Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embedding](https://www.aclweb.org/anthology/2020.coling-main.191/)
-
 
 해당 방식은 unsupervised 방식으로 문장의 긍정과 부정을 변형합니다. 이때, 변환을 다양하게 하기 위해 style emedding을 사용하며
 
