@@ -92,8 +92,6 @@ python generation.py --weight 2.0
 Output: 스타일 변형된 문장
 
 
-예시
-
 ```
 Input(positive): 이렇게 좋은데 평점이 왜이러지 ....
 
