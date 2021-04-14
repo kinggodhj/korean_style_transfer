@@ -88,3 +88,15 @@ Input: Test 문장
 python generation.py --weight 2.0
 ```
 Output: 스타일 변형된 문장
+
+
+예시
+
+```
+Input(positive): 이렇게 좋은데 평점이 왜이러지 ....
+
+Transferred (w=3): 이렇게 별로임 제작... 이게 영화냐...
+
+Transferred (w=2): 이렇게 좋은데 뭘 비추겠지 .... 0
+
+```
