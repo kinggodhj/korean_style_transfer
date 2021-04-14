@@ -41,3 +41,20 @@ python data_token.py
 ------------
 
 ### 학습하기
+모델 설명 (model.py)
+
+1. Transforemr 기본 모델 
+ 
+Layer 개수: 2 
+모델 사이즈, embedding 사이즈, latent 사이즈: 256
+
+3. Encoder의 output latent vector와의 유사도 곱을 통한 embedding 모듈
+ 
+ Embedding 사이즈: 256
+ 
+main.py 파일에서 모델 구조 생성 및 학습 진행 
+
+```
+python main.py
+```
+
