@@ -9,7 +9,7 @@
 한국어 영화 리뷰 https://github.com/e9t/nsmc
 
 
-#### 2.Tokenizer
+#### 2. Tokenizer를 이용한 BPE 모델 학습
 Google sentencePiece (version 0.1.85)
 
 Training 데이터 셋 (긍정, 부정 모두) 을 이용한 BPE 학습
@@ -20,7 +20,7 @@ python sentence_piece.py
 ```
 Output: sentimental.model
 
-#### 3.
+#### 3.데이터 토큰화 및 
 
 학습한 BPE 모델 (sentimental.model) 을 이용하여 전체 데이터 셋 Tokenization
 
