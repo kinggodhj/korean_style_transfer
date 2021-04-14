@@ -1,5 +1,5 @@
 # 한국어 문장 스타일 변환 (긍정 <-> 부정)
-Korean style transfer
+Sentence style transfer in Korean
 
 Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embedding](https://www.aclweb.org/anthology/2020.coling-main.191/)
 
