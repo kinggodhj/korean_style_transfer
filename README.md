@@ -20,14 +20,13 @@ python sentence_piece.py
 ```
 Output: sentimental.model
 
+
 #### 3.데이터 토큰화 
 
 학습한 BPE 모델 (sentimental.model) 을 이용하여 전체 데이터 셋 Tokenization
 
-
-./data/sentimental/
-
 ```
+cd ./data/sentimental/
 python data_token.py
 ```
 ```
