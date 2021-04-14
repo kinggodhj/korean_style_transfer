@@ -100,15 +100,15 @@ def subsequent_mask(size):
     return torch.from_numpy(subsequent_mask) == 0
 
 
-def id2text_sentence(sen_id, id_to_word):
+def id2list(sen_id):
     sen_text = []
-    max_i = len(id_to_word)
+    #max_i = len(id_to_word)
     for i in sen_id:
         if i == 3:  # id_eos
             break
-        if i >= max_i:
-            i = 1  # UNK
-        sen_text.append(id_to_word[i])
+        #if i >= max_i:
+        #    i = 1  # UNK
+        sen_text.append(i)
 #    return ' '.join(sen_text)
     return sen_text
 
