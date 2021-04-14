@@ -4,12 +4,12 @@
 
 
 #### 데이터셋 준비
-##### 1. 사용 데이터
+#### 1. 사용 데이터
 
 한국어 영화 리뷰 https://github.com/e9t/nsmc
 
 
-##### 2.Tokenizer
+#### 2.Tokenizer
 Google sentencePiece (version 0.1.85)
 
 Training 데이터 셋 (긍정, 부정 모두) 을 이용한 BPE 학습
