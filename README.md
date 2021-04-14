@@ -3,6 +3,8 @@ Sentence style transfer in Korean
 
 Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embedding](https://www.aclweb.org/anthology/2020.coling-main.191/)
 
+[영문 예시를 참조해보세요.](https://github.com/kinggodhj/How-Positive-Are-You-Text-Style-Transfer-using-Adaptive-Style-Embedding)
+
 ------------
 ### 1. 데이터셋 준비
 #### 1) 사용 데이터
