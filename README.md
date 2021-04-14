@@ -6,6 +6,8 @@ Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embed
 
 style embedding을 사용하기 위해 <U>self-supervised</U>을 이용합니다. (Encoder의 latent vecotor를 이용하여 학습됩니다.)
 
+** 모델 구조를 변형하며 실험한 것이기 때문에 huggingface등의 라이브러리를 사용하지 않고, 직접 구현했습니다. 
+
 ** 영문의 경우 [huggingface](https://huggingface.co/transformers/model_doc/gpt2.html)의 GPT2의 word embedding을 추가적으로 이용하여 성능을 추가적으로 향상시켰지만, 
 
    한국어의 경우 아직 시도하지는 않았습니다.
