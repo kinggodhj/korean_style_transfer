@@ -10,7 +10,7 @@ style embedding을 사용하기 위해 <U>self-supervised</U>을 이용합니다
 
 ** 영문의 경우 [huggingface](https://huggingface.co/transformers/model_doc/gpt2.html) GPT2의 word embedding을 pre-trained word embedding으로 모델에 적용하여 성능을 추가적으로 향상시켰지만, 
 
-   한국어의 경우 아직 시도하지는 않았습니다.
+   한국어의 경우 아직 시도하지 않았습니다.
    
    [영문 예시를 참조해보세요.](https://github.com/kinggodhj/How-Positive-Are-You-Text-Style-Transfer-using-Adaptive-Style-Embedding)
 
