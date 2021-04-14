@@ -122,6 +122,5 @@ Transferred (w=2): 이렇게 좋은데 뭘 비추겠지 .... 0
 
 ```
 ./eval.sh
-
 ```
    해당 데이터셋들은 reference(=label)이 없는 데이터이기 때문에 self-BLUE만이 측정 가능함. 
