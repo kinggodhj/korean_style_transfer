@@ -80,3 +80,11 @@ Output: ./save/epoch_ae_model_params.pkl
 ### 스타일 변형하기
 
 유사도 곱을 통해 학습된 스타일 embedding을 조절하면서 문장의 스타일 변형을 진행
+
+Input: Test 문장
+
+--weight: 스타일 변형 정도를 제어하는 hyper-parameter (0<=w 인 실수이고 0이면 문장 복원의 기능을 가짐)
+```
+python generation.py --weight 2.0
+```
+Output: 스타일 변형된 문장
