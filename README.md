@@ -4,13 +4,13 @@ Sentence style transfer in Korean
 Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embedding](https://www.aclweb.org/anthology/2020.coling-main.191/)
 
 ------------
-### 데이터셋 준비
-#### 1. 사용 데이터
+### 1. 데이터셋 준비
+#### 1) 사용 데이터
 
 한국어 영화 리뷰 https://github.com/e9t/nsmc
 
 
-#### 2. Tokenizer를 이용한 BPE 모델 학습
+#### 2) Tokenizer를 이용한 BPE 모델 학습
 Google sentencePiece (version 0.1.85)
 
 Training 데이터 셋 (긍정, 부정 모두) 을 이용한 BPE 학습
@@ -22,7 +22,7 @@ python sentence_piece.py
 Output: sentimental.model
 
 
-#### 3.데이터 토큰화 
+#### 3) 데이터 토큰화 
 
 학습한 BPE 모델 (sentimental.model) 을 이용하여 전체 데이터 셋 Tokenization
 
@@ -42,27 +42,27 @@ python data_token.py
 
 ------------
 
-### 학습하기
-#### 1. 모델 설명 (model.py)
+### 2. 학습하기
+#### 1) 모델 설명 (model.py)
 
-1. Transforemr 모델 
+- Transforemr 모델 
  
    Layer 개수: 2 
    모델 사이즈, embedding 사이즈, latent 사이즈: 256
 
-3. 스타일 embedding 모듈
+- 스타일 embedding 모듈
  
    Embedding 사이즈: 256
    
-#### 2. 학습 구조 
+#### 2) 학습 구조 
 
-1. Transforemr 모델 
+- Transforemr 모델 
  
    Encoder의 latent vector와 스타일 embedding vector를 이용하여 
    
    입력 문장을 복원하는 auto-encoder 형태로 학습 진행 (classification loss로 학습 진행)
 
-2. 스타일 embedding 모듈
+- 스타일 embedding 모듈
    
    Transformer의 encoder output인 latent vector와 행렬 곱을 통해 유사도 얻음
    
@@ -79,7 +79,7 @@ Output: ./save/epoch_ae_model_params.pkl
 
 ------------
 
-### 스타일 변형하기
+### 3. 스타일 변형하기
 
 유사도 곱을 통해 학습된 스타일 embedding을 조절하면서 문장의 스타일 변형을 진행
 
