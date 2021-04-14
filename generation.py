@@ -10,7 +10,7 @@ from torch import optim
 import sentencepiece as spm
 
 from data import get_cuda, id2list, non_pair_data_loader, to_var
-from model_norm import Classifier, make_model
+from model import Classifier, make_model
 from setup import add_output, preparation 
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
