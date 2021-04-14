@@ -5,9 +5,9 @@ import torch
 from sklearn.metrics import accuracy_score
 
 from data import get_cuda, to_var
-from model_norm import LabelSmoothing
+from model import LabelSmoothing
 
-def train_pick(ae_model, dis_model, ae_optimizer, dis_optimizer,  train_data_loader, epoch, args):
+def train(ae_model, dis_model, ae_optimizer, dis_optimizer,  train_data_loader, epoch, args):
     print("Transformer Training process....")
     ae_model.train()
 
@@ -71,7 +71,7 @@ def train_pick(ae_model, dis_model, ae_optimizer, dis_optimizer,  train_data_loa
     
     return np.mean(loss_ae), np.mean(loss_dis), np.mean(acc), ae_model, dis_model, ae_optimizer, dis_optimizer
 
-def val_pick(ae_model, dis_model, eval_data_loader, epoch, args):
+def val(ae_model, dis_model, eval_data_loader, epoch, args):
     
     print("Transformer Validation process....")
     ae_model.eval()

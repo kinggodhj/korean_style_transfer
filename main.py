@@ -10,9 +10,9 @@ from tensorboardX import SummaryWriter
 
 # Import your model files.
 from data import get_cuda, non_pair_data_loader, id2text_sentence, to_var
-from model_norm import make_model, Classifier, NoamOpt
+from model import make_model, Classifier, NoamOpt
 from setup import preparation, read_file, write_file
-from train import train_pick, val_pick
+from train import train, val
 
 os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
