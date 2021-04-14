@@ -41,20 +41,42 @@ python data_token.py
 ------------
 
 ### 학습하기
-모델 설명 (model.py)
+#### 1. 모델 설명 (model.py)
 
-1. Transforemr 기본 모델 
+1. Transforemr 모델 
  
    Layer 개수: 2 
    모델 사이즈, embedding 사이즈, latent 사이즈: 256
 
-3. Encoder의 output latent vector와의 유사도 곱을 통한 embedding 모듈
+3. 스타일 embedding 모듈
  
    Embedding 사이즈: 256
+   
+#### 2. 학습 구조 
+
+1. Transforemr 모델 
  
+   Encoder의 latent vector와 스타일 embedding vector를 이용하여 
+   
+   입력 문장을 복원하는 auto-encoder 형태로 학습 진행 (classification loss로 학습 진행)
+
+2. 스타일 embedding 모듈
+   
+   Transformer의 encoder output인 latent vector와 행렬 곱을 통해 유사도 얻음
+   
+   유사도를 통해 긍정, 부정을 분류 (classification loss로 학습 진행) 
+   
+
 main.py 파일에서 모델 구조 생성 및 학습 진행 
 
 ```
 python main.py
 ```
 
+Output: ./save/epoch_ae_model_params.pkl
+
+------------
+
+### 스타일 변형하기
+
+유사도 곱을 통해 학습된 스타일 embedding을 조절하면서 문장의 스타일 변형을 진행
