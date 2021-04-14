@@ -4,6 +4,10 @@ Sentence style transfer in Korean
 Reference: [How Positive Are You: Text Style Transfer using Adaptive Style Embedding](https://www.aclweb.org/anthology/2020.coling-main.191/)
 
 
+해당 방식은 unsupervised 방식으로 문장의 긍정과 부정을 변형합니다. 이때, 변환을 다양하게 하기 위해 style emedding을 사용하며
+
+style embedding을 사용하기 위해 <U>self-supervised</U>을 이용합니다. (Encoder의 latent vecotor를 이용하여 학습됩니다.)
+
 ** 영문의 경우 [huggingface](https://huggingface.co/transformers/model_doc/gpt2.html)의 GPT2의 word embedding을 추가적으로 이용하여 
    
    성능을 향상시켰지만, 한국어의 경우 아직 시도하지는 않았습니다.
