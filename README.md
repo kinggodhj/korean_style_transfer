@@ -21,6 +21,7 @@ python sentence_piece.py
 Output: sentimental.model
 
 학습한 BPE 모델 (sentimental.model) 을 이용하여 전체 데이터 셋 Tokenization
+
 e.g) '이런 영화는 그만' -> [79, 189, 1188, 4]
 
 ./data/sentimental/
